@@ -1,7 +1,26 @@
 ---
-const platform = "github";
-const userName = "nosoynati"
+import Socials from "./Socials.astro";
 ---
+
+<style>
+  footer {
+    width: 100%;
+    background-color: yellow;
+  }
+  ul {
+    display: flex;
+    gap: 1rem;
+  }
+  ul > li {
+    list-style-type: none;
+  }
+</style>
+
 <footer>
-  <p>See more of what i've been doing in <a href={`https://${platform}.com/${userName}`}>{platform}</a></p>
+  <h3>Find me</h3>
+  <ul>
+    <li><Socials platform="github" username="nosoynati" /></li>
+    <li><Socials platform="linkedin" username="nataberger91" /></li>
+    <li><Socials platform="tumblr" username="sunday6am" /></li>
+  </ul>
 </footer>

@@ -1,0 +1,23 @@
+---
+const { platform, username } = Astro.props;
+---
+<style>
+  .paltformLink {
+    padding: 0.5rem 1rem;
+    gap: 1rem;
+  }
+  .s-link {
+    font-size: 11px;
+    text-decoration: none;
+    font-weight: 600;
+    text-transform: uppercase;
+  }
+</style>
+<div class="paltformLink">
+  {
+    platform === "linkedin" 
+    ? <a class="s-link" href={`https://www.${platform}.com/in/${username}`}>{platform}</a>
+    :<a class="s-link" href={`https://www.${platform}.com/${username}`}>{platform}</a>
+  }
+  
+</div>
