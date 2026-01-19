@@ -1,9 +1,5 @@
 ---
-const pageTitle = "About this site";
-import "../styles/global.css";
-import Header from "../components/Header.astro";
-import Footer from "../components/Footer.astro";
-
+import BaseLayout from "../layouts/BaseLayout.astro";
 const identity = {
   firstName: "Nata",
   country: "Argentina",
@@ -19,63 +15,49 @@ const fontWeight = "bold";
 const textCase = "uppercase";
 ---
 
-<html>
-  <head>
-    <title>{pageTitle}</title>
-    <style define:vars={{ skillColor, fontWeight, textCase }}>
-      h1 {
-        color: rebeccapurple;
-      }
-      h2 {
-        color: chartreuse;
-      }
-      h1 {
-        font-size: 4rem;
-      }
-      .skill {
-        /* color: chocolate; */
-        color: var(--skillColor);
-        font-weight: var(--fontWeight);
-        text-transform: var(--textCase);
-      }
-    </style>
-  </head>
-
-  <body>
-    <Header />
-    <h1>{pageTitle}</h1>
-    <h2>... and my new Astro site!</h2>
-
-    <p>Here's some things about me:</p>
-    <ul>
-      <li>My name is {identity.firstName}</li>
-      <li>I live in {identity.country} and i'm a {identity.ocupation}</li>
-      {
-        identity.hobbies.length >= 2 && (
-          <li>
-            Two of my hobbies are {identity.hobbies[0]} and {identity.hobbies[1]}
-          </li>
-        )
-      }
-    </ul>
-    <p>Curently learning Astro {happy && <span style="color: red;">HAPPY to be doing so!</span>}</p>
-    <p>
-      I {
-        finished ? (
-          <span style="color: red;">finished</span>
-        ) : (
-          <span style="color: red;">haven't finished</span>
-        )
-      } this tutorial
-    </p>
-    <h2>Skills</h2>
-    <p>Some of my skills are:</p>
-    <ul>
-      {skills.map((skill) => <li class="skill">{skill}</li>)}
-    </ul>
-    <Footer />
-    <script>
-      import "../scripts/menu.js";
-    </script>
-  </body>
-</html>
+<BaseLayout pageTitle="About me">
+  <style define:vars={{ skillColor, fontWeight, textCase }}>
+    h1 {
+      color: rebeccapurple;
+    }
+    h2 {
+      color: chartreuse;
+    }
+    h1 {
+      font-size: 4rem;
+    }
+    .skill {
+      /* color: chocolate; */
+      color: var(--skillColor);
+      font-weight: var(--fontWeight);
+      text-transform: var(--textCase);
+    }
+  </style>
+  <p>Here's some things about me:</p>
+  <ul>
+    <li>My name is {identity.firstName}</li>
+    <li>I live in {identity.country} and i'm a {identity.ocupation}</li>
+    {
+      identity.hobbies.length >= 2 && (
+        <li>
+          Two of my hobbies are {identity.hobbies[0]} and {identity.hobbies[1]}
+        </li>
+      )
+    }
+  </ul>
+  <p>Curently learning Astro {happy && <span style="color: red;">HAPPY to be doing so!</span>}</p>
+  <p>
+    I {
+      finished ? (
+        <span style="color: red;">finished</span>
+      ) : (
+        <span style="color: red;">haven't finished</span>
+      )
+    } this tutorial
+  </p>
+  <h2>Skills</h2>
+  <p>Some of my skills are:</p>
+  <ul>
+    {skills.map((skill) => <li class="skill">{skill}</li>)}
+  </ul>
+</BaseLayout>
