@@ -7,6 +7,6 @@ image:
     url: "https://docs.astro.build/default-og-image.png"
     alt: "The word Astro againts an illustratopn of planets and star"
 pubDate: 2022-07-25
-tags: ["astro", "success"]
+tags: ["astro", "mine"]
 ---
 This post should show up with my other posts because i'm using `import.meta.glob()`. If it doesn't i screw up
