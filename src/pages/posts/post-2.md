@@ -2,10 +2,10 @@
 layout: ../../layouts/MarkDownPostLayout.astro
 title: My Second Blog Post
 author: It isnt Nat
-description: "After learning some Astro, I couldn't stop!"
+description: After learning some Astro, I couldn't stop!
 image:
-    url: "https://docs.astro.build/assets/arc.webp"
-    alt: "The Astro logo on a dark background with a purple gradient arc."
+    url: https://docs.astro.build/assets/arc.webp
+    alt: The Astro logo on a dark background with a purple gradient arc.
 pubDate: 2022-07-08
 tags: ["astro", "blogging", "learning in public", "successes"]
 ---
