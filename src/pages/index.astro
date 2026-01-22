@@ -1,7 +1,12 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
+// Supports weights 200-900
+import '@fontsource-variable/inconsolata';
+import '@fontsource/courier-prime';
+import Greeting from "../components/Greeting";
 ---
 
 <BaseLayout pageTitle="Home page">
   <h1>My awesome blog site</h1>
+  <Greeting client:load messages={["Hey", "Howdy", "Hey hoo", "How u doin?"]} />
 </BaseLayout>
