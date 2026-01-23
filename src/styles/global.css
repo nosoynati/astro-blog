@@ -8,11 +8,30 @@
 :root {
   --height: 100dvh;
 }
+button {
+  cursor: pointer;
+}
+nav > .btns {
+  display: flex;
+  justify-content: space-between;
+  position: fixed;
+  right: 0;
+  top: 0;
+  left: 0;
+}
+.menu-mobile {
+  display: flex !important;
+  flex-direction: column;
+  background-color: yellow;
+  position: fixed;
+  transition: display ease 5s;
+}
+
 html {
   background-color: #f1f5f9;
   line-height: 1.2;
   /* font-family: 'Inconsolata Variable', monospace; */
-  font-family: 'Courier Prime', monospace;
+  font-family: "Courier Prime", monospace;
 }
 
 html.dark {
@@ -87,6 +106,7 @@ ul {
   display: none;
   margin: 0;
   place-content: flex-start;
+
 }
 .nav-links a {
   display: block;
@@ -135,10 +155,11 @@ ul {
     display: flex;
     margin: 0.75em auto;
     max-width: calc(50dvw + 10em);
-    position: static;
+    position: relative;
+    z-index: 2;
     width: auto;
     justify-content: space-around;
-    background: green;
+    background: blueviolet;
     max-height: min-content;
   }
   .nav-links a {

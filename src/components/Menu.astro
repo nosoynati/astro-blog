@@ -1,5 +1,19 @@
 ---
+
 ---
+<script>
+  const menuBtn = document.querySelector(".menu")
+  const menuNav = document.getElementById("main-menu")
+
+  const isOpen = menuBtn?.getAttribute('aria-expand')
+
+  menuBtn?.addEventListener('click', () => {
+    if(isOpen === 'false'){
+      menuNav?.classList.toggle('menu-mobile')
+    }
+  })
+</script>
+
 <button aria-expand="false" aria-controls="main-menu" class="menu">
   Menu
 </button>

@@ -1,5 +1,4 @@
 ---
-layout: ../../layouts/MarkDownPostLayout.astro
 title: My FOURTH Blog Post
 author: Its Nat
 description: "This time, Claude help me, 'cause i'm silly..."

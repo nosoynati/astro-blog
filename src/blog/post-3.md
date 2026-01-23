@@ -1,5 +1,4 @@
 ---
-layout: ../../layouts/MarkDownPostLayout.astro
 title: My Third Blog Post
 author: Its Nat
 description: I had some challenges, but asking in the community really helped!
