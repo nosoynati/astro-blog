@@ -1,12 +1,20 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 // Supports weights 200-900
-import '@fontsource-variable/inconsolata';
-import '@fontsource/courier-prime';
+import "@fontsource-variable/inconsolata";
+import "@fontsource/courier-prime";
+import { getCollection } from "astro:content";
 import Greeting from "../components/Greeting";
+import BlogPost from "../components/BlogPost.astro";
+const allPosts = await getCollection("blog");
+const length = allPosts.length;
+const lastPost = allPosts[length - 1];
+const { id, data } = lastPost;
 ---
 
 <BaseLayout pageTitle="Home page">
   <h1>My awesome blog site</h1>
   <Greeting client:load messages={["Hey", "Howdy", "Hey hoo", "How u doin?"]} />
+  <h3>Las post:</h3>
+  <p><a href={`/posts/${id}`}>{data.title}</a></p>
 </BaseLayout>
